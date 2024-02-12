@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,5 +9,8 @@
 </head>
 <body>
    <p>Welcome to the pokedex page of my final project! Stay tuned for updates!</p>
+   <img src="{% static 'sprites/bulbasaur1.png' %}" alt="Bulbasaur (Uncaught)">
+   <img src="{% static 'sprites/bulbasaur2.png' %}" alt="Bulbasaur (Caught)">
+   <img src="{% static 'sprites/bulbasaur3.png' %}" alt="Bulbasaur (*Caught*)">
 </body>
 </html>
