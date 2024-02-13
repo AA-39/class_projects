@@ -8,9 +8,11 @@ def login(request):
     return render(request, 'pokeTracker/login.html')
 
 def pokedex(request):
-    image_numbers = range(1, 30)  # Replace this with your actual image numbers
+    image_numbers = range(1, 1000)  # Replace this with your actual image numbers
     context = {'image_numbers': image_numbers}
     return render(request, 'pokeTracker/pokedex.html', context)
 
 def shinydex(request):
-    return render(request, 'pokeTracker/shinydex.html')
+    image_numbers = range(1, 1000)  # Replace this with your actual image numbers
+    context = {'image_numbers': image_numbers}
+    return render(request, 'pokeTracker/shinydex.html', context)

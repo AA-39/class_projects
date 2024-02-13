@@ -6,9 +6,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeTracker Login</title>
+    <style>
+        .custom-checkbox {
+            display: none;
+        }
+
+        .custom-checkbox-label {
+            display: inline-block;
+            width: 100px; 
+            height: 100px; 
+            cursor: pointer;
+            background-size: cover;
+        }
+    </style>
+    <script>
+        {% for i in image_numbers %}
+            document.styleSheets[0].insertRule('#checkbox{{ i }}:checked + .custom-checkbox-label { background-image: url("{% static "sprites/" %}{{ i }}-3.png"); }', 0);
+            document.styleSheets[0].insertRule('#checkbox{{ i }} + .custom-checkbox-label { background-image: url("{% static "sprites/" %}{{ i }}-1.png"); }', 0);
+        {% endfor %}
+    </script>
 </head>
 <body>
-   <p>Welcome to the shiny pokedex page of my final project! Stay tuned for updates!</p>
-   
+
+{% for i in image_numbers %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<p>Welcome to the shiny pokedex page of my final project! Stay tuned for updates!</p>
+
 </body>
 </html>
