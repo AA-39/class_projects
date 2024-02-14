@@ -1,3 +1,5 @@
+## class_projects/class_projects/settings.py
+
 """
 Django settings for class_projects project.
 
