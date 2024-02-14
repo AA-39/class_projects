@@ -16,14 +16,14 @@
 
         #checkbox{{ i }} + .custom-checkbox-label {
             background-image: url('{% static "sprites/" %}{{ i }}-2.png');
-            filter: grayscale(100%) brightness(0%);
+            filter: brightness(0%);
         }
         {% endfor %}
     </style>
 </head>
 <body>
 
-<p>Welcome to the shiny pokedex page of my final project! Stay tuned for updates!</p>
+<h1>Shiny PokeDex</h1>
 
 {% for i in image_numbers %}
     <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
