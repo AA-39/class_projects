@@ -2,33 +2,32 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shiny PokeTracker</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-    <style>
-        {% for i in image_numbers %}
-        #checkbox{{ i }}:checked + .custom-checkbox-label {
-            background-image: url('{% static "sprites/" %}{{ i }}-2.png');
-            filter: grayscale(0%) brightness(100%);
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PokeTracker</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'icon.jpeg' %}">
+        <style>
+            {% for i in image_numbers %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: grayscale(0%) brightness(100%);
+                }
 
-        #checkbox{{ i }} + .custom-checkbox-label {
-            background-image: url('{% static "sprites/" %}{{ i }}-2.png');
-            filter: brightness(0%);
-        }
-        {% endfor %}
-    </style>
-</head>
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+        </style>
+    </head>
 <body>
-
-<h1>Shiny PokeDex</h1>
+<h1>PokeDex</h1>
 
 {% for i in image_numbers %}
     <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
     <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
 {% endfor %}
-
 </body>
 </html>
