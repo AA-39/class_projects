@@ -24,12 +24,12 @@
 
         {% for i in image_numbers %}
         #checkbox{{ i }}:checked + .custom-checkbox-label {
-            background-image: url('{% static "sprites/" %}{{ i }}-3.png');
+            background-image: url('{% static "sprites/" %}{{ i }}-2.png');
             filter: grayscale(0%) brightness(100%);
         }
 
         #checkbox{{ i }} + .custom-checkbox-label {
-            background-image: url('{% static "sprites/" %}{{ i }}-3.png');
+            background-image: url('{% static "sprites/" %}{{ i }}-2.png');
             filter: grayscale(100%) brightness(0%);
         }
         {% endfor %}
