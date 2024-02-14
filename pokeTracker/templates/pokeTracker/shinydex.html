@@ -5,23 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeTracker Login</title>
+    <title>Shiny PokeTracker</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
     <style>
-
-        .custom-checkbox {
-            display: none;
-        }
-
-        .custom-checkbox-label {
-            display: inline-block;
-            width: 143px; 
-            height: 143px; 
-            cursor: pointer;
-            border: 8px solid #03fc7f;
-            outline: 2px solid black;
-            background-size: cover;
-        }
-
         {% for i in image_numbers %}
         #checkbox{{ i }}:checked + .custom-checkbox-label {
             background-image: url('{% static "sprites/" %}{{ i }}-2.png');
