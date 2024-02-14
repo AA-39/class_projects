@@ -1,3 +1,4 @@
+## class_projects/pokeTracker/apps.py
 from django.apps import AppConfig
 
 class PoketrackerConfig(AppConfig):
