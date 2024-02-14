@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeTracker Login</title>
     <style>
+
         .custom-checkbox {
             display: none;
         }
@@ -15,18 +16,21 @@
             display: inline-block;
             width: 143px; 
             height: 143px; 
-            border: 10px black solid;
             cursor: pointer;
+            border: 8px solid #03fc7f;
+            outline: 2px solid black;
             background-size: cover;
         }
 
         {% for i in image_numbers %}
         #checkbox{{ i }}:checked + .custom-checkbox-label {
             background-image: url('{% static "sprites/" %}{{ i }}-3.png');
+            filter: grayscale(0%) brightness(100%);
         }
 
         #checkbox{{ i }} + .custom-checkbox-label {
-            background-image: url('{% static "sprites/" %}{{ i }}-1.png');
+            background-image: url('{% static "sprites/" %}{{ i }}-3.png');
+            filter: grayscale(100%) brightness(0%);
         }
         {% endfor %}
     </style>
