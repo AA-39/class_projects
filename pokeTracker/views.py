@@ -9,16 +9,16 @@ def login(request):
     return render(request, 'pokeTracker/login.html')
 
 def pokedex(request):
-    kanto = range(1, 151)  # Replace this with your actual image numbers
-    johto = range(152, 251)
-    hoenn = range(252, 386)
-    sinnoh = range(387, 493)
-    unova = range(494, 649)
-    kalos = range(650, 721)
-    alola = range(722, 807)
-    go = range(808, 809)
-    galar = range(810, 905)
-    paldea = range(906, 1025)
+    kanto = range(1, 152)  # Replace this with your actual image numbers
+    johto = range(152, 252)
+    hoenn = range(252, 387)
+    sinnoh = range(387, 494)
+    unova = range(494, 650)
+    kalos = range(650, 722)
+    alola = range(722, 808)
+    go = range(808, 810)
+    galar = range(810, 906)
+    paldea = range(906, 1026)
     aforms = [20019, 20020, 20026, 20027, 20028, 20037, 20038, 20050,
               20051, 20052, 20053, 20074, 20075, 20076, 20088, 20089,
               20103, 20105]
@@ -37,16 +37,16 @@ def pokedex(request):
     return render(request, 'pokeTracker/pokedex.html', context)
 
 def shinydex(request):
-    kanto = range(1, 151)  # Replace this with your actual image numbers
-    johto = range(152, 251)
-    hoenn = range(252, 386)
-    sinnoh = range(387, 493)
-    unova = range(494, 649)
-    kalos = range(650, 721)
-    alola = range(722, 807)
-    go = range(808, 809)
-    galar = range(810, 905)
-    paldea = range(906, 1025)
+    kanto = range(1, 152)  # Replace this with your actual image numbers
+    johto = range(152, 252)
+    hoenn = range(252, 387)
+    sinnoh = range(387, 494)
+    unova = range(494, 650)
+    kalos = range(650, 722)
+    alola = range(722, 808)
+    go = range(808, 810)
+    galar = range(810, 906)
+    paldea = range(906, 1026)
     aforms = [20019, 20020, 20026, 20027, 20028, 20037, 20038, 20050,
               20051, 20052, 20053, 20074, 20075, 20076, 20088, 20089,
               20103, 20105]
