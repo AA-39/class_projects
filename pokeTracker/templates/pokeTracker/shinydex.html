@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
         <link rel="shortcut icon" type="image/png" href="{% static 'icon.png' %}">
         <style>
-            {% for i in image_numbers %}
+            {% for i in kanto %}
                 #checkbox{{ i }}:checked + .custom-checkbox-label {
                 background-image: url('{% static "sprites/" %}{{ i }}-2.png');
                 filter: brightness(100%);
@@ -21,14 +21,266 @@
                 filter: brightness(0%);
                 }
             {% endfor %}
+
+            {% for i in johto %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
+            {% for i in hoenn %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
+            {% for i in sinnoh %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
+            {% for i in unova %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
+            {% for i in kalos %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
+            {% for i in alola %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
+            {% for i in go %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
+            {% for i in galar %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
+            {% for i in paldea %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
+            {% for i in aforms %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
+            {% for i in gforms %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
+            {% for i in hforms %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
+            {% for i in pforms %}
+                #checkbox{{ i }}:checked + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(100%);
+                }
+
+                #checkbox{{ i }} + .custom-checkbox-label {
+                background-image: url('{% static "sprites/" %}{{ i }}-2.png');
+                filter: brightness(0%);
+                }
+            {% endfor %}
+
         </style>
     </head>
 <body>
-<h1>Shiny PokeDex</h1>
 
-{% for i in image_numbers %}
+<h1>PokeDex</h1>
+
+<h2>Kanto</h2>
+
+{% for i in kanto %}
     <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
     <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
 {% endfor %}
+
+<h2>Johto</h2>
+
+{% for i in johto %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<h2>Hoenn</h2>
+
+{% for i in hoenn %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<h2>Sinnoh</h2>
+
+{% for i in sinnoh %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<h2>Unova</h2>
+
+{% for i in unova %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<h2>Kalos</h2>
+
+{% for i in kalos %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<h2>Alola</h2>
+
+{% for i in alola %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<h2>Galar</h2>
+
+{% for i in galar %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<h2>Paldea</h2>
+
+{% for i in paldea %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<h2>Alolan Forms</h2>
+
+{% for i in aforms %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<h2>Pokemon Go</h2>
+
+{% for i in go %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<h2>Galarian Forms</h2>
+
+{% for i in gforms %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<h2>Hisuian Forms</h2>
+
+{% for i in hforms %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
+<h2>Paldean Forms</h2>
+
+{% for i in pforms %}
+    <input type="checkbox" class="custom-checkbox" id="checkbox{{ i }}">
+    <label for="checkbox{{ i }}" class="custom-checkbox-label"></label>
+{% endfor %}
+
 </body>
 </html>
