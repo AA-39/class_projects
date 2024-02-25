@@ -1,6 +1,9 @@
 /* class_projects/pokeTracker/static/style.css */
 
-h1 {
+nav {
+    text-align: center;
+}
+h1, h2 {
     text-align: center;
 }
 
@@ -17,4 +20,8 @@ h1 {
     cursor: pointer;
     background-size: cover;
     margin: 2px;
+}
+
+.hidden {
+     display: none;
 }

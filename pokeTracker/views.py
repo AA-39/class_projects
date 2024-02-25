@@ -1,6 +1,7 @@
 ## class_projects/pokeTracker/views.py
 
 from django.shortcuts import render
+from .models import Pokemon
 
 def index(request):
     return render(request, 'pokeTracker/index.html')
@@ -9,57 +10,29 @@ def login(request):
     return render(request, 'pokeTracker/login.html')
 
 def pokedex(request):
-    kanto = range(1, 152)  # Replace this with your actual image numbers
-    johto = range(152, 252)
-    hoenn = range(252, 387)
-    sinnoh = range(387, 494)
-    unova = range(494, 650)
-    kalos = range(650, 722)
-    alola = range(722, 808)
-    go = range(808, 810)
-    galar = range(810, 906)
-    paldea = range(906, 1026)
-    aforms = [20019, 20020, 20026, 20027, 20028, 20037, 20038, 20050,
-              20051, 20052, 20053, 20074, 20075, 20076, 20088, 20089,
-              20103, 20105]
-    gforms = [30052, 30077, 30078, 30079, 30080, 30083, 30110, 30122,
-              30144, 30145, 30146, 30199, 30222, 30263, 30264, 30554,
-              30555, 30562, 30618]
-    hforms = [40058, 40059, 40100, 40101, 40157, 40211, 40215, 40503,
-              40549, 40570, 40571, 40628, 40705, 40706, 40713]
-    pforms = [50128, 50194]
+    regions = ['Kanto', 'Johto', 'Hoenn', 'Sinnoh', 'Unova', 'Kalos', 'Alola', 'Galar', 'Paldea']
+    region_data = []
 
-    context = {'kanto': kanto, 'johto': johto, 'hoenn': hoenn, 
-               'sinnoh': sinnoh, 'unova': unova, 'kalos': kalos,
-               'alola': alola, 'go': go, 'galar': galar, 'paldea': paldea,
-               'aforms': aforms, 'gforms': gforms, 'hforms': hforms,
-               'pforms': pforms}
-    return render(request, 'pokeTracker/pokedex.html', context)
+    for region in regions:
+        pokemon_in_region = Pokemon.objects.filter(region=region)
+        region_info = {
+            'name': region,
+            'pokemon_list': [{'natid': pokemon.natid} for pokemon in pokemon_in_region]
+        }
+        region_data.append(region_info)
+
+    return render(request, 'pokeTracker/pokedex.html', {'regions': region_data})
 
 def shinydex(request):
-    kanto = range(1, 152)  # Replace this with your actual image numbers
-    johto = range(152, 252)
-    hoenn = range(252, 387)
-    sinnoh = range(387, 494)
-    unova = range(494, 650)
-    kalos = range(650, 722)
-    alola = range(722, 808)
-    go = range(808, 810)
-    galar = range(810, 906)
-    paldea = range(906, 1026)
-    aforms = [20019, 20020, 20026, 20027, 20028, 20037, 20038, 20050,
-              20051, 20052, 20053, 20074, 20075, 20076, 20088, 20089,
-              20103, 20105]
-    gforms = [30052, 30077, 30078, 30079, 30080, 30083, 30110, 30122,
-              30144, 30145, 30146, 30199, 30222, 30263, 30264, 30554,
-              30555, 30562, 30618]
-    hforms = [40058, 40059, 40100, 40101, 40157, 40211, 40215, 40503,
-              40549, 40570, 40571, 40628, 40705, 40706, 40713]
-    pforms = [50128, 50194]
+    regions = ['Kanto', 'Johto', 'Hoenn', 'Sinnoh', 'Unova', 'Kalos', 'Alola', 'Galar', 'Paldea']
+    region_data = []
 
-    context = {'kanto': kanto, 'johto': johto, 'hoenn': hoenn, 
-               'sinnoh': sinnoh, 'unova': unova, 'kalos': kalos,
-               'alola': alola, 'go': go, 'galar': galar, 'paldea': paldea,
-               'aforms': aforms, 'gforms': gforms, 'hforms': hforms,
-               'pforms': pforms}
-    return render(request, 'pokeTracker/shinydex.html', context)
+    for region in regions:
+        pokemon_in_region = Pokemon.objects.filter(region=region)
+        region_info = {
+            'name': region,
+            'pokemon_list': [{'natid': pokemon.natid} for pokemon in pokemon_in_region]
+        }
+        region_data.append(region_info)
+
+    return render(request, 'pokeTracker/shinydex.html', {'regions': region_data})
