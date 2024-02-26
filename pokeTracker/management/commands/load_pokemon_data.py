@@ -8,7 +8,6 @@ class Command(BaseCommand):
     help = 'Load initial Pokemon data'
 
     def handle(self, *args, **options):
-        # Use finders to locate the CSV file within the static folder
         csv_path = finders.find('info_db.csv')
 
         if not csv_path:
