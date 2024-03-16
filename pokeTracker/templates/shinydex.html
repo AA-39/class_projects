@@ -50,9 +50,9 @@
             window.onload = uncheckAllRegionCheckboxes;
         </script>
         <nav>
-            <a href="/pokeTracker/pokedex">Switch to Pokedex</a> |||
-            <a href="/pokeTracker/">Home</a> |||
-            <a href="/pokeTracker/login">Login</a> |||
+            <a href="{% url 'shinydex' %}">Shiny</a>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'register' %}">Register</a>
         </nav>
     </head>
 <body>

@@ -1,0 +1,43 @@
+<!-- class_projects/pokeTracker/templates/pokeTracker/login.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="{% static 'icon.png' %}">
+    <title>PokeTracker Login</title>
+</head>
+<body>
+    {% block content %}
+    <header>
+      <nav>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'register' %}">Register</a>
+      </nav>
+    </header>
+    
+    <br><br>
+    <div class="back">
+      <h2>Login</h2>
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+      </form>
+      <br><br>
+    </div>
+    
+    <br><br>
+    <footer>
+        <nav>
+          <nav>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'register' %}">Register</a>
+          </nav>
+      </nav>
+    </footer>
+    {% endblock %}
+</body>
+</html>
