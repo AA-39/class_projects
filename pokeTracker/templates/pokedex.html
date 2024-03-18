@@ -1,4 +1,4 @@
-<!-- class_projects/pokeTracker/templates/pokeTracker/pokedex.html -->
+<!-- class_projects/pokeTracker/templates/pokedex.html -->
 {% load static %}
 
 <!DOCTYPE html>
@@ -59,15 +59,20 @@
 
     <h1>PokeDex</h1>
 
-{% for region in regions %}
-    <h2>
-        <input type="checkbox" id="regionCheckbox{{ region.name }}" onclick="toggleRegion('{{ region.name }}')" checked>
-        <label for="regionCheckbox{{ region.name }}">{{ region.name }}</label>
-    </h2>
-    {% for pokemon in region.pokemon_list %}
-        <input type="checkbox" class="custom-checkbox hidden" id="checkbox{{ pokemon.natid }}" data-region="{{ region.name }}">
-        <label for="checkbox{{ pokemon.natid }}" class="custom-checkbox-label hidden" data-region="{{ region.name }}"></label>
-    {% endfor %}
-{% endfor %}
+    <form method="post" action="{% url 'pokedex' %}">
+        {% csrf_token %}
+        {% for region in regions %}
+        <h2>
+            <input type="checkbox" id="regionCheckbox{{ region.name }}" onclick="toggleRegion('{{ region.name }}')" checked>
+            <label for="regionCheckbox{{ region.name }}">{{ region.name }}</label>
+        </h2>
+        {% for pokemon in region.pokemon_list %}
+            <input type="checkbox" name="checkboxes" class="custom-checkbox hidden" value="{{ pokemon.natid }}" id="checkbox{{ pokemon.natid }}" data-region="{{ region.name }}"
+                {% if user_checked_checkboxes and pokemon.natid in user_checked_checkboxes %} checked {% endif %}>
+            <label for="checkbox{{ pokemon.natid }}" class="custom-checkbox-label hidden" data-region="{{ region.name }}"></label>
+        {% endfor %}
+        {% endfor %}
+        <button type="submit">Save Checked Checkboxes</button>
+    </form>
 </body>
 </html>
