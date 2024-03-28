@@ -10,6 +10,7 @@ class Pokemon(models.Model):
     type1 = models.CharField(max_length=255)
     type2 = models.CharField(max_length=255)
     altform = models.BooleanField(default=False)
+    link = models.CharField(max_length=255, null=True, blank=True)
 
 class PokedexCheckedCheckbox(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

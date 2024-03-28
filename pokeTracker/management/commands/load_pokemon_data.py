@@ -23,7 +23,8 @@ class Command(BaseCommand):
                     region=row['region'],
                     type1=row['type1'],
                     type2=row['type2'],
-                    altform=row['altform'] == 'True'
+                    altform=row['altform'] == 'True',
+                    link=row['link']
                 )
 
         self.stdout.write(self.style.SUCCESS('Successfully loaded Pokemon data'))

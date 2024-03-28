@@ -35,14 +35,14 @@ def register_view(request):
 
 @login_required(login_url='login')
 def pokedex(request):
-    regions = ['Kanto', 'Johto', 'Hoenn', 'Sinnoh', 'Unova', 'Kalos', 'Alola', 'Galar', 'Paldea']
+    regions = ['Kanto', 'Johto', 'Hoenn', 'Sinnoh', 'Unova', 'Kalos', 'Alola', 'Go', 'Galar', 'Hisui', 'Paldea']
     region_data = []
 
     for region in regions:
         pokemon_in_region = Pokemon.objects.filter(region=region)
         region_info = {
             'name': region,
-            'pokemon_list': [{'natid': pokemon.natid} for pokemon in pokemon_in_region]
+            'pokemon_list': [{'natid': pokemon.natid, 'species': pokemon.species, 'link': pokemon.link} for pokemon in pokemon_in_region]
         }
         region_data.append(region_info)
 
@@ -63,14 +63,14 @@ def pokedex(request):
 
 @login_required(login_url='login')
 def shinydex(request):
-    regions = ['Kanto', 'Johto', 'Hoenn', 'Sinnoh', 'Unova', 'Kalos', 'Alola', 'Galar', 'Paldea']
+    regions = ['Kanto', 'Johto', 'Hoenn', 'Sinnoh', 'Unova', 'Kalos', 'Alola', 'Go', 'Galar', 'Hisui', 'Paldea']
     region_data = []
 
     for region in regions:
         pokemon_in_region = Pokemon.objects.filter(region=region)
         region_info = {
             'name': region,
-            'pokemon_list': [{'natid': pokemon.natid} for pokemon in pokemon_in_region]
+            'pokemon_list': [{'natid': pokemon.natid, 'species': pokemon.species, 'link': pokemon.link} for pokemon in pokemon_in_region]
         }
         region_data.append(region_info)
 

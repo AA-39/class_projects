@@ -68,9 +68,12 @@
         </h2>
         {% for pokemon in region.pokemon_list %}
             <input type="checkbox" name="checkboxes" class="custom-checkbox hidden" value="{{ pokemon.natid }}" id="checkbox{{ pokemon.natid }}" data-region="{{ region.name }}"
-                {% if user_checked_checkboxes and pokemon.natid in user_checked_checkboxes %} checked {% endif %}>
-            <label for="checkbox{{ pokemon.natid }}" class="custom-checkbox-label hidden" data-region="{{ region.name }}"></label>
-        {% endfor %}
+            {% if user_checked_checkboxes and pokemon.natid in user_checked_checkboxes %} checked {% endif %}>
+            <label for="checkbox{{ pokemon.natid }}" class="custom-checkbox-label hidden"
+                data-region="{{ region.name }}">
+                <a href="https://pokemondb.net/pokedex/{{ pokemon.link }}" target="_blank">{{ pokemon.species }}</a>
+                </label>
+            {% endfor %}            
         {% endfor %}
         <button type="submit">Save Checked Checkboxes</button>
     </form>
