@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'icon.png' %}">
     <title>PokeTracker Registration</title>
 </head>
@@ -14,7 +15,7 @@
 <header>
       <nav>
         <a href="{% url 'index' %}">Home</a>
-        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'login' %}">Login</a>
       </nav>
 </header>
 <br><br>
@@ -35,7 +36,7 @@
 <footer>
       <nav>
         <a href="{% url 'index' %}">Home</a>
-        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'login' %}">Login</a>
       </nav>
 </footer>
 {% endblock %}

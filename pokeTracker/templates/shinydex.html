@@ -50,13 +50,13 @@
             window.onload = uncheckAllRegionCheckboxes;
         </script>
         <nav>
-            <a href="{% url 'shinydex' %}">Shiny</a>
+            <a href="{% url 'pokedex' %}">Pokedex</a>
             <a href="{% url 'index' %}">Home</a>
-            <a href="{% url 'register' %}">Register</a>
         </nav>
     </head>
 <body>
-
+    <br><br>
+    <div class = 'back'>
     <h1>Shiny PokeDex</h1>
 
     <form method="post" action="{% url 'shinydex' %}">
@@ -75,7 +75,17 @@
                 </label>
             {% endfor %}            
         {% endfor %}
-        <button type="submit">Save Checked Checkboxes</button>
+        <button class="pokeball-button" type="submit"></button>
+        <br><br><br>
+    </div>  
+    <br>
+    <br>
     </form>
+    <footer>
+        <nav>
+            <a href="{% url 'pokedex' %}">Pokedex</a>
+            <a href="{% url 'index' %}">Home</a>
+        </nav>
+  </footer>
 </body>
 </html>

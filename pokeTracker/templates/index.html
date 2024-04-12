@@ -6,10 +6,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'icon.png' %}">
     <title>PokeTracker Homepage</title>
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const changeImageButton = document.getElementById('change-image-button');
+        const profileImages = document.getElementById('profile-images');
+        const previewImage = document.getElementById('preview-image');
+
+        changeImageButton.addEventListener('click', function() {
+            profileImages.style.display = 'flex';
+        });
+
+        const profileImageElements = document.querySelectorAll('.profile-image');
+        profileImageElements.forEach(image => {
+            image.addEventListener('click', function() {
+                previewImage.src = this.src;
+
+                profileImages.style.display = 'none';
+            });
+        });
+    });
+</script>    
+<header>
+    {% if user.is_authenticated %}
+    <nav>
+      <a href="{% url 'pokedex' %}">Pokedex</a>
+      <a href="{% url 'shinydex' %}">Shinydex</a>
+    </nav>
+    {% else %}
+    <nav>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+    </nav>
+    {% endif %}
+  </header>
 <body>
-    <p>Welcome to the home page of my final project! Stay tuned for updates!</p>
+    <br><br>
+   <div class = 'back'>
+    <br><br>
+    <h1>Welcome to Poketracker!</h1>
+
+    <br><br>
+
+    {% if user.is_authenticated %}
+    <p>Click on either 'Pokedex' or 'Shinydex' to acces your personal pokedex!<br><br>Click on a pokemon's silhouette to mark it as caught.<br><br>When you're done doing updates,click the pokeball icon at the bottom of the page to save everything to your account!</p>
+    {% else %}
+    <p>Click on "Register" to create an account, or click "Login" to log into an already existing account!</p>
+    <br><br><br><br><br><br><br><br><br><br>
+    </div>
+    <br><br>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <br><br>
+    <button id="change-image-button">Change Trainer</button>
+
+    <div class="profile-images" id="profile-images">
+        {% for i in '0123456789'|make_list %}
+        {{ forloop.counter }}
+        <img src="{% static '/profile-images/profile'%}{{ i }}.png" alt="Profile Image {{ i }}" class="profile-image">
+        {% endfor %}
+    </div>
+
+    <div id="preview-container">
+        <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static '/profile-images/profile0.png' %}{% endif %}" alt="Selected Image" id="preview-image">
+    </div>
+    {% endif %}
+
+
+    {% if user.is_authenticated %}
+    <br><br><br>
+    <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+        <button type="submit">Logout</button><br><br><br>
+    </form>
+</div>
+<br><br>
+    <footer>
+    {% endif %}
+
+{% if user.is_authenticated %}
+    <nav>
+      <a href="{% url 'pokedex' %}">Pokedex</a>
+      <a href="{% url 'shinydex' %}">Shinydex</a>
+    </nav>
+{% else %}
+    <nav>
+      <a href="{% url 'login' %}">Login</a>
+      <a href="{% url 'register' %}">Register</a>
+    </nav>
+{% endif %}
+</footer>
 </body>
 </html>
